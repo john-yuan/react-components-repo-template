@@ -1,0 +1,18 @@
+{
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "lib",
+    "strict": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react"
+  }
+}
