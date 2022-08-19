@@ -1,14 +1,11 @@
----
-nav:
-  title: Components
-  path: /components
----
-
 ## Button
 
 ```tsx
+/**
+ * hideActions: ["CSB"]
+ */
 import React from 'react';
-import Doc from './doc';
+import Code from './code';
 
-export default () => <Doc />;
+export default () => <Code />;
 ```

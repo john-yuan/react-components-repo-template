@@ -1,19 +1,22 @@
 import React from 'react'
-import { withClassNamePrefix } from '../utils/withClassNamePrefix';
-
-const ns = withClassNamePrefix('btn')
+import { cls } from '../shared/cls'
 
 export interface Props {
+  primary?: boolean;
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button = React.memo<Props>(({
   children,
+  primary,
   onClick
 }) => {
   return (
-    <button className={ns()} onClick={onClick}>{children}</button>
+    <button
+      className={cls('btn', { 'btn-primary': primary })}
+      onClick={onClick}
+    >{children}</button>
   )
 })
 

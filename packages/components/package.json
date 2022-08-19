@@ -3,7 +3,7 @@
   "name": "components-example",
   "version": "0.0.1",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "es/index.d.ts",
   "module": "es/index.js",
   "files": [
     "es",
@@ -12,7 +12,7 @@
     "styles.css"
   ],
   "scripts": {
-    "dev": "tsc --outDir es --module esnext --watch",
+    "dev": "npm run clear && tsc --outDir es --module esnext --watch",
     "lint": "eslint --ext .js,.ts,.tsx ./src",
     "lint:fix": "eslint --ext .js,.ts,.tsx ./src --fix",
     "build": "npm run clear && npm run build:css && npm run build:es && npm run build:lib",

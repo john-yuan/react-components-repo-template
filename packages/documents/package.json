@@ -3,11 +3,11 @@
   "name": "documents-example",
   "version": "1.0.0",
   "scripts": {
-    "start": "dumi dev",
+    "dev": "dumi dev",
+    "deploy": "npm run docs:build && npm run docs:deploy",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
+    "lint:fix": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\""
   },
   "dependencies": {
     "components-example": "workspace:^",
