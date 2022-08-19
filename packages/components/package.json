@@ -4,12 +4,23 @@
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": ["lib", "src"],
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "src",
+    "styles.css"
+  ],
   "scripts": {
-    "build": "lessc src/index.less lib/index.css && tsc",
-    "watch": "lessc src/index.less lib/index.css && tsc --watch",
+    "dev": "tsc --outDir es --module esnext --watch",
     "lint": "eslint --ext .js,.ts,.tsx ./src",
-    "lint:fix": "eslint --ext .js,.ts,.tsx ./src --fix"
+    "lint:fix": "eslint --ext .js,.ts,.tsx ./src --fix",
+    "build": "npm run clear && npm run build:css && npm run build:es && npm run build:lib",
+    "clear": "rimraf styles.css && rimraf es && rimraf lib",
+    "build:css": "lessc src/index.less styles.css",
+    "build:es": "tsc --outDir es --module esnext",
+    "build:lib": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/react": "17.x",
@@ -23,6 +34,7 @@
     "less": "^4.1.3",
     "react": "17.x",
     "react-dom": "17.x",
+    "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
